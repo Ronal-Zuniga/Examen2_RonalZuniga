@@ -1,9 +1,10 @@
 
 package examen2_ronalzuniga;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Chat {
+public class Chat implements Serializable{
     private ArrayList<Mensaje> mensajes;
 
     public Chat() {

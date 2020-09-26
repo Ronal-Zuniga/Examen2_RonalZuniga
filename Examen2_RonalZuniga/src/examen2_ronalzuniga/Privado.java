@@ -4,28 +4,28 @@ package examen2_ronalzuniga;
 import java.util.ArrayList;
 
 public class Privado extends Chat{
-    private String receptor;
+        private Usuario destino;
 
     public Privado() {
         super();
     }
 
-    public Privado(String receptor, ArrayList<Mensaje> mensajes) {
+    public Privado(Usuario destino, ArrayList<Mensaje> mensajes) {
         super(mensajes);
-        this.receptor = receptor;
+        this.destino = destino;
     }
 
-    public String getReceptor() {
-        return receptor;
+    public Usuario getDestino() {
+        return destino;
     }
 
-    public void setReceptor(String receptor) {
-        this.receptor = receptor;
+    public void setDestino(Usuario destino) {
+        this.destino = destino;
     }
 
     @Override
     public String toString() {
-        return "Privado{" + "receptor=" + receptor + '}';
-    }  
+        return "Privado{" + "destino=" + destino + '}';
+    }
     
 }

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Grupo extends Chat{
     private String nombre;
-    private ArrayList<Persona> miembros;
+    private ArrayList<Usuario> miembros;
     private Persona admin;
 
     public Grupo() {
         super();
     }
 
-    public Grupo(String nombre, ArrayList<Persona> miembros, Persona admin, ArrayList<Mensaje> mensajes) {
+    public Grupo(String nombre, ArrayList<Usuario> miembros, Persona admin, ArrayList<Mensaje> mensajes) {
         super(mensajes);
         this.nombre = nombre;
         this.miembros = miembros;
@@ -26,11 +26,11 @@ public class Grupo extends Chat{
         this.nombre = nombre;
     }
 
-    public ArrayList<Persona> getMiembros() {
+    public ArrayList<Usuario> getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(ArrayList<Persona> miembros) {
+    public void setMiembros(ArrayList<Usuario> miembros) {
         this.miembros = miembros;
     }
 
@@ -44,7 +44,7 @@ public class Grupo extends Chat{
 
     @Override
     public String toString() {
-        return "Grupo{" + "nombre=" + nombre + ", miembros=" + miembros + ", admin=" + admin + '}';
+        return nombre;
     }
         
 }

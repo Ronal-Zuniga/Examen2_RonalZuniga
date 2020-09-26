@@ -8,21 +8,20 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class adminPersona {
-
-    private ArrayList<Persona> listaPersonas = new ArrayList();
+public class adminGrupo {
+    private ArrayList<Chat> listaGrupos = new ArrayList();
     private File archivo = null;
-
-    public adminPersona(String path) {
+    
+    public adminGrupo(String path) {
         archivo = new File(path);
     }
 
-    public ArrayList<Persona> getListaPersonas() {
-        return listaPersonas;
+    public ArrayList<Chat> getListaGrupos() {
+        return listaGrupos;
     }
 
-    public void setListaPersonas(ArrayList<Persona> listaPersonas) {
-        this.listaPersonas = listaPersonas;
+    public void setListaGrupos(ArrayList<Chat> listaGrupos) {
+        this.listaGrupos = listaGrupos;
     }
 
     public File getArchivo() {
@@ -35,32 +34,25 @@ public class adminPersona {
 
     @Override
     public String toString() {
-        return "listaPersonas=" + listaPersonas;
-    }
-
-    //extra mutador
-    public void setPersona(Persona p) {
-        this.listaPersonas.add(p);
+        return "adminGrupo{" + "listaGrupos=" + listaGrupos + ", archivo=" + archivo + '}';
     }
     
-    public void eliminar(Persona p){
-        if (this.listaPersonas.contains(p)) {
-            this.listaPersonas.remove(p);
-        }
+    public void setGrupo(Grupo p) {
+        this.listaGrupos.add(p);
     }
-
+    
     public void cargarArchivo() {
         try {            
-            listaPersonas = new ArrayList();
-            Persona temp;
+            listaGrupos = new ArrayList();
+            Grupo temp;
             if (archivo.exists()) {
                   FileInputStream entrada
                     = new FileInputStream(archivo);
                 ObjectInputStream objeto
                     = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (Persona) objeto.readObject()) != null) {
-                        listaPersonas.add(temp);
+                    while ((temp = (Grupo) objeto.readObject()) != null) {
+                        listaGrupos.add(temp);
                     }
                 } catch (EOFException e) {
                 }
@@ -78,7 +70,7 @@ public class adminPersona {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (Persona t : listaPersonas) {
+            for (Chat t : listaGrupos) {
                 bw.writeObject(t);
             }
             bw.flush();
@@ -91,5 +83,4 @@ public class adminPersona {
             }
         }
     }
-
 }

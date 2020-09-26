@@ -6,7 +6,8 @@ import java.util.ArrayList;
 public class Usuario extends Persona{
     private String usuario;
     private String password;
-    private ArrayList<Persona> amigos;
+    private ArrayList<Usuario> amigos;
+     private ArrayList<Usuario> solicitudes;
     private int calidad;
     private ArrayList<Chat> chats;
 
@@ -14,11 +15,12 @@ public class Usuario extends Persona{
         super();
     }
 
-    public Usuario(String usuario, String password, ArrayList<Persona> amigos, int calidad, ArrayList<Chat> chats, String nombre, String apellido, int telefono) {
+    public Usuario(String usuario, String password, ArrayList<Usuario> amigos, ArrayList<Usuario> solicitudes, int calidad, ArrayList<Chat> chats, String nombre, String apellido, int telefono) {
         super(nombre, apellido, telefono);
         this.usuario = usuario;
         this.password = password;
         this.amigos = amigos;
+        this.solicitudes=solicitudes;
         this.calidad = calidad;
         this.chats = chats;
     }
@@ -39,13 +41,22 @@ public class Usuario extends Persona{
         this.password = password;
     }
 
-    public ArrayList<Persona> getAmigos() {
+    public ArrayList<Usuario> getAmigos() {
         return amigos;
     }
 
-    public void setAmigos(ArrayList<Persona> amigos) {
+    public void setAmigos(ArrayList<Usuario> amigos) {
         this.amigos = amigos;
     }
+
+    public ArrayList<Usuario> getSolicitudes() {
+        return solicitudes;
+    }
+
+    public void setSolicitudes(ArrayList<Usuario> solicitudes) {
+        this.solicitudes = solicitudes;
+    }
+    
 
     public int getCalidad() {
         return calidad;

@@ -1,18 +1,19 @@
 
 package examen2_ronalzuniga;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Mensaje {
+public class Mensaje implements Serializable{
     private String contenido;
-    private Date fecha;
-    private Date hora;
+    private String fecha;
+    private String hora;
     private boolean leido;
 
     public Mensaje() {
     }
 
-    public Mensaje(String contenido, Date fecha, Date hora, boolean leido) {
+    public Mensaje(String contenido,  String fecha, String hora, boolean leido) {
         this.contenido = contenido;
         this.fecha = fecha;
         this.hora = hora;
@@ -27,19 +28,19 @@ public class Mensaje {
         this.contenido = contenido;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
@@ -54,6 +55,5 @@ public class Mensaje {
     @Override
     public String toString() {
         return "Mensaje{" + "contenido=" + contenido + ", fecha=" + fecha + ", hora=" + hora + ", leido=" + leido + '}';
-    }
-    
+    }    
 }
