@@ -25,7 +25,7 @@ public class Privado extends Chat{
 
     @Override
     public String toString() {
-        return "Privado{" + "destino=" + destino + '}';
+        return destino.getNombre();
     }
     
 }

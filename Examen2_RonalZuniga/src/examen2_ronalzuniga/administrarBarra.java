@@ -11,9 +11,8 @@ public class administrarBarra extends Thread {
     private boolean vive;
     int valor;
 
-    public administrarBarra(JProgressBar barra, int valor) {
+    public administrarBarra(JProgressBar barra) {
         this.barra = barra;
-        this.valor=valor;
         vive = true;
     }
 
@@ -31,6 +30,14 @@ public class administrarBarra extends Thread {
 
     public void setBarra(JProgressBar barra) {
         this.barra = barra;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
     }
 
     @Override
